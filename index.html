@@ -1,285 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AlienX Executor - واحد من أقوى الهاكات المتطورة لروبلوكس">
-    <title>AlienXExecutor - أقوى أداة في تاريخ الهاكات</title>
-    <link rel="icon" href="./43fca53c-7d51-473d-a080-4730dbb6942b.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        :root {
-            --main-color: #00ffcc;
-            --text-color: #ffffff;
-            --bg-color: #000;
-            --hover-color: #ffffff;
-            --accent-color: #1a1a1a;
-            --neon-glow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ccaa;
-            --button-hover-glow: 0 0 15px #00ffcc, 0 0 20px #00ffcc, 0 0 35px #00ccaa;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            text-align: center;
-            padding: 5vh 2vw;
-            overflow-x: hidden;
-            animation: gradientBG 20s ease infinite;
-            background: linear-gradient(-45deg, #000000, #FFfFf, #003333, #000000);
-            background-size: 400% 400%;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #000000f0;
-            padding: 15px 0;
-            z-index: 1000;
-            box-shadow: 0 2px 12px #00ffcc50;
-            animation: fadeInNav 1s ease-out;
-        }
-
-        @keyframes fadeInNav {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        nav a {
-            color: var(--main-color);
-            text-decoration: none;
-            margin: 0 30px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--hover-color);
-        }
-
-        header {
-            margin-top: 120px;
-            margin-bottom: 60px;
-            animation: fadeInSlide 1.5s ease-out;
-        }
-
-        @keyframes fadeInSlide {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h1 {
-            color: var(--main-color);
-            font-size: 4.5rem;
-            margin-bottom: 15px;
-            text-shadow: var(--neon-glow);
-            position: relative;
-            animation: animateRocket 5s infinite;
-        }
-
-        @keyframes animateRocket {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
-            animation: fadeIn 2s ease-out;
-        }
-
-        .button {
-            background-color: var(--text-color);
-            color: #000;
-            padding: 20px 45px;
-            text-decoration: none;
-            font-size: 1.3rem;
-            border-radius: 18px;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 30px rgba(0, 255, 204, 0.5);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0,255,204,0.3), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .button:hover::before {
-            left: 100%;
-        }
-
-        .button:hover {
-            background-color: var(--hover-color);
-            transform: scale(1.1);
-            box-shadow: var(--button-hover-glow);
-        }
-
-        .features {
-            margin-top: 80px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            animation: fadeIn 2.8s ease-out;
-        }
-
-        .feature {
-            background-color: var(--accent-color);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 0 18px #00ffcc35;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 30px #00ffcc70;
-        }
-
-        .feature h3 {
-            color: var(--main-color);
-            margin-bottom: 14px;
-            font-size: 1.4rem;
-        }
-
-        .feature p {
-            color: #bbb;
-            font-size: 1.05rem;
-        }
-
-        .countdown {
-            margin-top: 60px;
-            font-size: 1.6rem;
-            color: var(--main-color);
-            text-shadow: var(--neon-glow);
-        }
-
-        footer {
-            margin-top: 100px;
-            font-size: 1rem;
-            color: #777;
-            border-top: 1px solid #222;
-            padding-top: 25px;
-        }
-
-        .section-title {
-            margin-top: 100px;
-            font-size: 2.5rem;
-            color: var(--main-color);
-            text-shadow: var(--neon-glow);
-        }
-
-        .extra-section {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #111;
-            border-radius: 15px;
-            box-shadow: 0 0 20px #00ffcc25;
-        }
-
-        .extra-section p {
-            font-size: 1.1rem;
-            color: #ccc;
-        }
-
-        .rocket-animation {
-            animation: rocketFlying 4s ease-in-out infinite;
-        }
-
-        @keyframes rocketFlying {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-20px); }
-        }
-
-    </style>
-</head>
-<body>
-    <nav>
-        <a href="#features"><i class="fas fa-star"></i> المميزات</a>
-        <a href="#download"><i class="fas fa-download"></i> التحميل</a>
-        <a href="#how-to-use"><i class="fas fa-cogs"></i> كيفية الاستخدام</a>
-        <a href="#info"><i class="fas fa-info-circle"></i> عن الهاك</a>
-        <a href="#developers"><i class="fas fa-lock"></i> المطورين</a>
-    </nav>
-
-    <header>
-        <h1><i class="fas fa-rocket"></i> AlienX Executor</h1>
-        <p><i class="fas fa-shield-alt"></i> من أقوى الهاكات للتهكير في تاريخ Roblox، تصميم جبار، حماية خارقة.</p>
-    </header>
-
-    <div class="buttons" id="download">
-        <a href="https://discord.gg/ah8Na6nfge" class="button" target="_blank"><i class="fab fa-discord"></i> سيرفر الدعم</a>
-        <a href="https://www.mediafire.com/file/rbona05h8bnqlvo/AlienX+Executor+-+Demo.rar/file" class="button" target="_blank"><i class="fas fa-download"></i> تحميل مباشر</a>
-    </div>
-
-    <section class="features" id="features">
-        <div class="feature">
-            <h3><i class="fas fa-microchip"></i> تقنيات الذكاء الاصطناعي</h3>
-            <p>مُعزز بأنظمة AI للكشف التلقائي عن أفضل السكربتات.</p>
-        </div>
-        <div class="feature">
-            <h3><i class="fas fa-brain"></i> تعلم آلي للتنفيذ الذكي</h3>
-            <p>تنفيذ تلقائي وتحليل أداء السكربتات بدقة غير مسبوقة.</p>
-        </div>
-        <div class="feature">
-            <h3><i class="fas fa-rocket"></i> أقوى أداء في الصناعة</h3>
-            <p>أسرع تنفيذ بين جميع الأدوات، متفوق على المنافسين.</p>
-        </div>
-        <div class="feature">
-            <h3><i class="fas fa-robot"></i> بوت مدمج للمهام المتكررة</h3>
-            <p>شغل سكربتات بشكل دوري بدون تدخل يدوي.</p>
-        </div>
-        <div class="feature">
-            <h3><i class="fas fa-shield-virus"></i> حماية متقدمة</h3>
-            <p>نظام حماية من الطرد والحظر مدمج ومشفر بالكامل.</p>
-        </div>
-    </section>
-
-    <h2 class="section-title" id="how-to-use">كيفية الاستخدام</h2>
-    <div class="extra-section">
-        <p>للاستفادة من جميع ميزات AlienX Executor، اتبع الخطوات التالية:</p>
-        <ol>
-            <li><strong>التسجيل في Discord:</strong> قم بالانضمام إلى سيرفر الدعم عبر الرابط الموجود في قسم "سيرفر الدعم". سيكون لديك إمكانية الوصول إلى آخر التحديثات والمساعدة في حال واجهتك أي مشكلة.</li>
-            <li><strong>تحميل الأداة:</strong> بعد الانضمام إلى السيرفر، قم بتحميل الأداة من الرابط المباشر المقدم في قسم "تحميل مباشر". تأكد من أنك قد قمت بتحميل الأداة من مصدر موثوق لتجنب أي مشاكل.</li>
-            <li><strong>تشغيل الأداة:</strong> بعد تحميل الأداة، قم بفك الضغط عن الملفات وتشغيل الملف التنفيذي (Installer). تأكد من أن جميع البرامج الضرورية مثل Microsoft Visual C++ Redistributable مثبتة على جهازك.</li>
-            <li><strong>اختيار السكربت:</strong> داخل الأداة، ستجد قائمة بالسكربتات المتاحة. اختر السكربت الذي ترغب في تنفيذه بناءً على احتياجاتك، مثل زيادة السرعة أو تعديل اللعبة.</li>
-            <li><strong>تشغيل السكربت:</strong> بعد اختيار السكربت، اضغط على زر "تشغيل" لتنفيذه داخل لعبة Roblox. ستتمكن من رؤية التأثيرات بشكل مباشر في اللعبة.</li>
-            <li><strong>الحفاظ على الأمان:</strong> تأكد من عدم استخدام الأداة في بيئات غير آمنة أو مع حسابات قد تواجه مشاكل من استخدام الهاكات. يفضل استخدام AlienX Executor فقط في بيئات آمنة.</li>
-        </ol>
-    </div>
-
-    <h2 class="section-title" id="info">معلومات إضافية</h2>
-    <div class="extra-section">
-        <p>AlienX هو نتاج ايام من التطوير والتجارب، يدعم ال90 يونيسي واكثر و يعتبر شيء خارق لهاك في اول نسخة له او في نسخته التجريبية.</p>
-    </div>
-
-   <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -521,10 +241,112 @@
             color: #bbb;
             font-size: 1rem;
         }
+
+        /* لغة التبديل */
+        .language-switcher {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            z-index: 1001;
+        }
+
+        .language-btn {
+            background-color: var(--main-color);
+            color: #000;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+        }
+
+        .language-btn:hover {
+            background-color: var(--hover-color);
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.8);
+        }
+
+        /* أنماط اللغة الإنجليزية */
+        body[dir="ltr"] {
+            text-align: left;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body[dir="ltr"] nav a {
+            margin: 0 15px;
+        }
+
+        body[dir="ltr"] .extra-section ol,
+        body[dir="ltr"] .extra-section ul {
+            padding-left: 20px;
+        }
     </style>
 </head>
 <body>
-<!-- ... باقي المحتوى كما هو ... -->
+    <!-- زر تبديل اللغة -->
+    <div class="language-switcher">
+        <button class="language-btn" id="languageBtn">English</button>
+    </div>
+
+    <nav>
+        <a href="#features"><i class="fas fa-star"></i> المميزات</a>
+        <a href="#download"><i class="fas fa-download"></i> التحميل</a>
+        <a href="#how-to-use"><i class="fas fa-cogs"></i> كيفية الاستخدام</a>
+        <a href="#info"><i class="fas fa-info-circle"></i> عن الهاك</a>
+        <a href="#developers"><i class="fas fa-lock"></i> المطورين</a>
+    </nav>
+
+    <header>
+        <h1><i class="fas fa-rocket"></i> AlienX Executor</h1>
+        <p><i class="fas fa-shield-alt"></i> من أقوى الهاكات للتهكير في تاريخ Roblox، تصميم جبار، حماية خارقة.</p>
+    </header>
+
+    <div class="buttons" id="download">
+        <a href="https://discord.gg/ah8Na6nfge" class="button" target="_blank"><i class="fab fa-discord"></i> سيرفر الدعم</a>
+        <a href="https://cdn.discordapp.com/attachments/1135267313206249492/1229761619343568976/AlienX_Installer.rar" class="button" target="_blank"><i class="fas fa-download"></i> تحميل مباشر</a>
+    </div>
+
+    <section class="features" id="features">
+        <div class="feature">
+            <h3><i class="fas fa-microchip"></i> تقنيات الذكاء الاصطناعي</h3>
+            <p>مُعزز بأنظمة AI للكشف التلقائي عن أفضل السكربتات.</p>
+        </div>
+        <div class="feature">
+            <h3><i class="fas fa-brain"></i> تعلم آلي للتنفيذ الذكي</h3>
+            <p>تنفيذ تلقائي وتحليل أداء السكربتات بدقة غير مسبوقة.</p>
+        </div>
+        <div class="feature">
+            <h3><i class="fas fa-rocket"></i> أقوى أداء في الصناعة</h3>
+            <p>أسرع تنفيذ بين جميع الأدوات، متفوق على المنافسين.</p>
+        </div>
+        <div class="feature">
+            <h3><i class="fas fa-robot"></i> بوت مدمج للمهام المتكررة</h3>
+            <p>شغل سكربتات بشكل دوري بدون تدخل يدوي.</p>
+        </div>
+        <div class="feature">
+            <h3><i class="fas fa-shield-virus"></i> حماية متقدمة</h3>
+            <p>نظام حماية من الطرد والحظر مدمج ومشفر بالكامل.</p>
+        </div>
+    </section>
+
+    <h2 class="section-title" id="how-to-use">كيفية الاستخدام</h2>
+    <div class="extra-section">
+        <p>للاستفادة من جميع ميزات AlienX Executor، اتبع الخطوات التالية:</p>
+        <ol>
+            <li><strong>التسجيل في Discord:</strong> قم بالانضمام إلى سيرفر الدعم عبر الرابط الموجود في قسم "سيرفر الدعم". سيكون لديك إمكانية الوصول إلى آخر التحديثات والمساعدة في حال واجهتك أي مشكلة.</li>
+            <li><strong>تحميل الأداة:</strong> بعد الانضمام إلى السيرفر، قم بتحميل الأداة من الرابط المباشر المقدم في قسم "تحميل مباشر". تأكد من أنك قد قمت بتحميل الأداة من مصدر موثوق لتجنب أي مشاكل.</li>
+            <li><strong>تشغيل الأداة:</strong> بعد تحميل الأداة، قم بفك الضغط عن الملفات وتشغيل الملف التنفيذي (Installer). تأكد من أن جميع البرامج الضرورية مثل Microsoft Visual C++ Redistributable مثبتة على جهازك.</li>
+            <li><strong>اختيار السكربت:</strong> داخل الأداة، ستجد قائمة بالسكربتات المتاحة. اختر السكربت الذي ترغب في تنفيذه بناءً على احتياجاتك، مثل زيادة السرعة أو تعديل اللعبة.</li>
+            <li><strong>تشغيل السكربت:</strong> بعد اختيار السكربت، اضغط على زر "تشغيل" لتنفيذه داخل لعبة Roblox. ستتمكن من رؤية التأثيرات بشكل مباشر في اللعبة.</li>
+            <li><strong>الحفاظ على الأمان:</strong> تأكد من عدم استخدام الأداة في بيئات غير آمنة أو مع حسابات قد تواجه مشاكل من استخدام الهاكات. يفضل استخدام AlienX Executor فقط في بيئات آمنة.</li>
+        </ol>
+    </div>
+
+    <h2 class="section-title" id="info">معلومات إضافية</h2>
+    <div class="extra-section">
+        <p>AlienX هو نتاج ايام من التطوير والتجارب، يدعم ال90 يونيسي واكثر و يعتبر شيء خارق لهاك في اول نسخة له او في نسخته التجريبية.</p>
+    </div>
 
     <h2 class="section-title" id="developers">المطورين</h2>
     <div class="extra-section dev-list">
@@ -541,11 +363,6 @@
             <p>مسير الخادم ورئيس الادارة و مسؤول التحديثات</p>
         </div>
     </div>
-
-<!-- ... باقي السكربت كما هو ... -->
-</body>
-</html>
-
 
     <div class="countdown" id="countdown">
         التحديث القادم بعد: <span id="timer">00:00:00</span>
@@ -581,6 +398,150 @@
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
+
+        // تبديل اللغة
+        const languageBtn = document.getElementById('languageBtn');
+        const htmlElement = document.documentElement;
+        
+        // تحقق من وجود تفضيل اللغة في localStorage
+        const savedLang = localStorage.getItem('language');
+        if (savedLang === 'en') {
+            switchToEnglish();
+        }
+        
+        languageBtn.addEventListener('click', function() {
+            if (htmlElement.getAttribute('dir') === 'rtl') {
+                switchToEnglish();
+                localStorage.setItem('language', 'en');
+            } else {
+                switchToArabic();
+                localStorage.setItem('language', 'ar');
+            }
+        });
+        
+        function switchToEnglish() {
+            htmlElement.setAttribute('dir', 'ltr');
+            htmlElement.setAttribute('lang', 'en');
+            languageBtn.textContent = 'العربية';
+            
+            // تغيير النصوص إلى الإنجليزية
+            document.querySelector('meta[name="description"]').content = "AlienX Executor - One of the most powerful advanced hacks for Roblox";
+            document.title = "AlienXExecutor - The most powerful tool in hacking history";
+            
+            // تحديث عناصر واجهة المستخدم
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks[0].innerHTML = '<i class="fas fa-star"></i> Features';
+            navLinks[1].innerHTML = '<i class="fas fa-download"></i> Download';
+            navLinks[2].innerHTML = '<i class="fas fa-cogs"></i> How to Use';
+            navLinks[3].innerHTML = '<i class="fas fa-info-circle"></i> About';
+            navLinks[4].innerHTML = '<i class="fas fa-lock"></i> Developers';
+            
+            document.querySelector('header p').innerHTML = '<i class="fas fa-shield-alt"></i> One of the most powerful hacking tools in Roblox history, amazing design, super protection.';
+            
+            const buttons = document.querySelectorAll('.button');
+            buttons[0].innerHTML = '<i class="fab fa-discord"></i> Support Server';
+            buttons[1].innerHTML = '<i class="fas fa-download"></i> Direct Download';
+            
+            const features = document.querySelectorAll('.feature');
+            features[0].querySelector('h3').innerHTML = '<i class="fas fa-microchip"></i> AI Technologies';
+            features[0].querySelector('p').textContent = 'Enhanced with AI systems for automatic detection of the best scripts.';
+            features[1].querySelector('h3').innerHTML = '<i class="fas fa-brain"></i> Smart Execution Learning';
+            features[1].querySelector('p').textContent = 'Automatic execution and script performance analysis with unprecedented accuracy.';
+            features[2].querySelector('h3').innerHTML = '<i class="fas fa-rocket"></i> Industry-Leading Performance';
+            features[2].querySelector('p').textContent = 'Fastest execution among all tools, outperforming competitors.';
+            features[3].querySelector('h3').innerHTML = '<i class="fas fa-robot"></i> Built-in Bot for Repetitive Tasks';
+            features[3].querySelector('p').textContent = 'Run scripts periodically without manual intervention.';
+            features[4].querySelector('h3').innerHTML = '<i class="fas fa-shield-virus"></i> Advanced Protection';
+            features[4].querySelector('p').textContent = 'Built-in protection system against kicks and bans, fully encrypted.';
+            
+            document.querySelector('#how-to-use').textContent = 'How to Use';
+            document.querySelector('#how-to-use + .extra-section p').textContent = 'To take advantage of all AlienX Executor features, follow these steps:';
+            const steps = document.querySelectorAll('#how-to-use + .extra-section ol li');
+            steps[0].innerHTML = '<strong>Register on Discord:</strong> Join the support server via the link in the "Support Server" section. You will have access to the latest updates and assistance if you encounter any problems.';
+            steps[1].innerHTML = '<strong>Download the Tool:</strong> After joining the server, download the tool from the direct link provided in the "Direct Download" section. Make sure you download the tool from a trusted source to avoid any issues.';
+            steps[2].innerHTML = '<strong>Run the Tool:</strong> After downloading the tool, extract the files and run the executable file (Installer). Make sure all necessary programs like Microsoft Visual C++ Redistributable are installed on your computer.';
+            steps[3].innerHTML = '<strong>Choose a Script:</strong> Inside the tool, you will find a list of available scripts. Choose the script you want to execute based on your needs, such as speed boost or game modification.';
+            steps[4].innerHTML = '<strong>Run the Script:</strong> After selecting the script, click the "Run" button to execute it in Roblox. You will be able to see the effects directly in the game.';
+            steps[5].innerHTML = '<strong>Maintain Security:</strong> Make sure not to use the tool in unsafe environments or with accounts that may face problems from using hacks. It is preferable to use AlienX Executor only in safe environments.';
+            
+            document.querySelector('#info').textContent = 'Additional Information';
+            document.querySelector('#info + .extra-section p').textContent = 'AlienX is the product of days of development and testing, supports 90+ UNIC and is considered a breakthrough hack in its first version or beta version.';
+            
+            document.querySelector('#developers').textContent = 'Developers';
+            const devBoxes = document.querySelectorAll('.dev-box');
+            devBoxes[0].querySelector('h3').textContent = 'Ovalian / dis :oovalerian';
+            devBoxes[0].querySelector('p').textContent = 'Main developer and creator of the website and hack';
+            devBoxes[1].querySelector('h3').textContent = 'Mohammed / dis :mr7mbozo3';
+            devBoxes[1].querySelector('p').textContent = 'Technical consultant and personal assistant';
+            devBoxes[2].querySelector('h3').textContent = 'Khaled / dis :r_i.';
+            devBoxes[2].querySelector('p').textContent = 'Server manager and head of administration and update manager';
+            
+            document.querySelector('#countdown').innerHTML = 'Next update in: <span id="timer">00:00:00</span>';
+            
+            document.querySelector('footer p').textContent = '© 2025 AlienX. All rights reserved.';
+        }
+        
+        function switchToArabic() {
+            htmlElement.setAttribute('dir', 'rtl');
+            htmlElement.setAttribute('lang', 'ar');
+            languageBtn.textContent = 'English';
+            
+            // استعادة النصوص العربية
+            document.querySelector('meta[name="description"]').content = "AlienX Executor - واحد من أقوى الهاكات المتطورة لروبلوكس";
+            document.title = "AlienXExecutor - أقوى أداة في تاريخ الهاكات";
+            
+            // استعادة عناصر واجهة المستخدم العربية
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks[0].innerHTML = '<i class="fas fa-star"></i> المميزات';
+            navLinks[1].innerHTML = '<i class="fas fa-download"></i> التحميل';
+            navLinks[2].innerHTML = '<i class="fas fa-cogs"></i> كيفية الاستخدام';
+            navLinks[3].innerHTML = '<i class="fas fa-info-circle"></i> عن الهاك';
+            navLinks[4].innerHTML = '<i class="fas fa-lock"></i> المطورين';
+            
+            document.querySelector('header p').innerHTML = '<i class="fas fa-shield-alt"></i> من أقوى الهاكات للتهكير في تاريخ Roblox، تصميم جبار، حماية خارقة.';
+            
+            const buttons = document.querySelectorAll('.button');
+            buttons[0].innerHTML = '<i class="fab fa-discord"></i> سيرفر الدعم';
+            buttons[1].innerHTML = '<i class="fas fa-download"></i> تحميل مباشر';
+            
+            const features = document.querySelectorAll('.feature');
+            features[0].querySelector('h3').innerHTML = '<i class="fas fa-microchip"></i> تقنيات الذكاء الاصطناعي';
+            features[0].querySelector('p').textContent = 'مُعزز بأنظمة AI للكشف التلقائي عن أفضل السكربتات.';
+            features[1].querySelector('h3').innerHTML = '<i class="fas fa-brain"></i> تعلم آلي للتنفيذ الذكي';
+            features[1].querySelector('p').textContent = 'تنفيذ تلقائي وتحليل أداء السكربتات بدقة غير مسبوقة.';
+            features[2].querySelector('h3').innerHTML = '<i class="fas fa-rocket"></i> أقوى أداء في الصناعة';
+            features[2].querySelector('p').textContent = 'أسرع تنفيذ بين جميع الأدوات، متفوق على المنافسين.';
+            features[3].querySelector('h3').innerHTML = '<i class="fas fa-robot"></i> بوت مدمج للمهام المتكررة';
+            features[3].querySelector('p').textContent = 'شغل سكربتات بشكل دوري بدون تدخل يدوي.';
+            features[4].querySelector('h3').innerHTML = '<i class="fas fa-shield-virus"></i> حماية متقدمة';
+            features[4].querySelector('p').textContent = 'نظام حماية من الطرد والحظر مدمج ومشفر بالكامل.';
+            
+            document.querySelector('#how-to-use').textContent = 'كيفية الاستخدام';
+            document.querySelector('#how-to-use + .extra-section p').textContent = 'للاستفادة من جميع ميزات AlienX Executor، اتبع الخطوات التالية:';
+            const steps = document.querySelectorAll('#how-to-use + .extra-section ol li');
+            steps[0].innerHTML = '<strong>التسجيل في Discord:</strong> قم بالانضمام إلى سيرفر الدعم عبر الرابط الموجود في قسم "سيرفر الدعم". سيكون لديك إمكانية الوصول إلى آخر التحديثات والمساعدة في حال واجهتك أي مشكلة.';
+            steps[1].innerHTML = '<strong>تحميل الأداة:</strong> بعد الانضمام إلى السيرفر، قم بتحميل الأداة من الرابط المباشر المقدم في قسم "تحميل مباشر". تأكد من أنك قد قمت بتحميل الأداة من مصدر موثوق لتجنب أي مشاكل.';
+            steps[2].innerHTML = '<strong>تشغيل الأداة:</strong> بعد تحميل الأداة، قم بفك الضغط عن الملفات وتشغيل الملف التنفيذي (Installer). تأكد من أن جميع البرامج الضرورية مثل Microsoft Visual C++ Redistributable مثبتة على جهازك.';
+            steps[3].innerHTML = '<strong>اختيار السكربت:</strong> داخل الأداة، ستجد قائمة بالسكربتات المتاحة. اختر السكربت الذي ترغب في تنفيذه بناءً على احتياجاتك، مثل زيادة السرعة أو تعديل اللعبة.';
+            steps[4].innerHTML = '<strong>تشغيل السكربت:</strong> بعد اختيار السكربت، اضغط على زر "تشغيل" لتنفيذه داخل لعبة Roblox. ستتمكن من رؤية التأثيرات بشكل مباشر في اللعبة.';
+            steps[5].innerHTML = '<strong>الحفاظ على الأمان:</strong> تأكد من عدم استخدام الأداة في بيئات غير آمنة أو مع حسابات قد تواجه مشاكل من استخدام الهاكات. يفضل استخدام AlienX Executor فقط في بيئات آمنة.';
+            
+            document.querySelector('#info').textContent = 'معلومات إضافية';
+            document.querySelector('#info + .extra-section p').textContent = 'AlienX هو نتاج ايام من التطوير والتجارب، يدعم ال90 يونيسي واكثر و يعتبر شيء خارق لهاك في اول نسخة له او في نسخته التجريبية.';
+            
+            document.querySelector('#developers').textContent = 'المطورين';
+            const devBoxes = document.querySelectorAll('.dev-box');
+            devBoxes[0].querySelector('h3').textContent = 'أوفاليان/ dis :oovalerian';
+            devBoxes[0].querySelector('p').textContent = 'المطور الرئيسي و صانع الموقع والهاك';
+            devBoxes[1].querySelector('h3').textContent = 'محمد / dis :mr7mbozo3';
+            devBoxes[1].querySelector('p').textContent = 'المستشار التقني و المساعد الشخصي';
+            devBoxes[2].querySelector('h3').textContent = 'خالد / dis :r_i.';
+            devBoxes[2].querySelector('p').textContent = 'مسير الخادم ورئيس الادارة و مسؤول التحديثات';
+            
+            document.querySelector('#countdown').innerHTML = 'التحديث القادم بعد: <span id="timer">00:00:00</span>';
+            
+            document.querySelector('footer p').textContent = '&copy; 2025 AlienX. كل الحقوق محفوظة.';
+        }
     </script>
 </body>
 </html>
