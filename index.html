@@ -15,6 +15,7 @@
             --hover-color: #ffffff;
             --accent-color: #1a1a1a;
             --neon-glow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ccaa;
+            --button-hover-glow: 0 0 15px #00ffcc, 0 0 20px #00ffcc, 0 0 35px #00ccaa;
         }
 
         * {
@@ -49,6 +50,12 @@
             padding: 15px 0;
             z-index: 1000;
             box-shadow: 0 2px 12px #00ffcc50;
+            animation: fadeInNav 1s ease-out;
+        }
+
+        @keyframes fadeInNav {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         nav a {
@@ -81,18 +88,13 @@
             margin-bottom: 15px;
             text-shadow: var(--neon-glow);
             position: relative;
+            animation: animateRocket 5s infinite;
         }
 
-        h1::after {
-            content: '';
-            position: absolute;
-            right: -2rem;
-            animation: pulse 1s infinite alternate;
-        }
-
-        @keyframes pulse {
-            from { transform: scale(1); opacity: 0.6; }
-            to { transform: scale(1.2); opacity: 1; }
+        @keyframes animateRocket {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
         }
 
         .buttons {
@@ -135,7 +137,7 @@
         .button:hover {
             background-color: var(--hover-color);
             transform: scale(1.1);
-            box-shadow: 0 0 40px rgba(0, 255, 204, 0.6);
+            box-shadow: var(--button-hover-glow);
         }
 
         .features {
@@ -204,24 +206,35 @@
             font-size: 1.1rem;
             color: #ccc;
         }
+
+        .rocket-animation {
+            animation: rocketFlying 4s ease-in-out infinite;
+        }
+
+        @keyframes rocketFlying {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+        }
+
     </style>
 </head>
 <body>
     <nav>
         <a href="#features"><i class="fas fa-star"></i> المميزات</a>
         <a href="#download"><i class="fas fa-download"></i> التحميل</a>
+        <a href="#how-to-use"><i class="fas fa-cogs"></i> كيفية الاستخدام</a>
         <a href="#info"><i class="fas fa-info-circle"></i> عن الهاك</a>
-        <a href="#security"><i class="fas fa-lock"></i> المطورين</a>
+        <a href="#developers"><i class="fas fa-lock"></i> المطورين</a>
     </nav>
 
     <header>
         <h1><i class="fas fa-rocket"></i> AlienX Executor</h1>
-        <p><i class="fas fa-shield-alt"></i> من أقوى الهاكات  للتهكير في تاريخ  Roblox، تصميم جبار، حماية خارقة.</p>
+        <p><i class="fas fa-shield-alt"></i> من أقوى الهاكات للتهكير في تاريخ Roblox، تصميم جبار، حماية خارقة.</p>
     </header>
 
     <div class="buttons" id="download">
         <a href="https://discord.gg/ah8Na6nfge" class="button" target="_blank"><i class="fab fa-discord"></i> سيرفر الدعم</a>
-        <a href="https://cdn.discordapp.com/attachments/1135267313206249492/1229761619343568976/AlienX_Installer.rar" class="button" target="_blank"><i class="fas fa-download"></i> تحميل مباشر</a>
+        <a href="https://www.mediafire.com/file/rbona05h8bnqlvo/AlienX+Executor+-+Demo.rar/file" class="button" target="_blank"><i class="fas fa-download"></i> تحميل مباشر</a>
     </div>
 
     <section class="features" id="features">
@@ -247,22 +260,299 @@
         </div>
     </section>
 
-    <h2 class="section-title" id="info">معلومات إضافية</h2>
+    <h2 class="section-title" id="how-to-use">كيفية الاستخدام</h2>
     <div class="extra-section">
-        <p>AlienX  هو نتاج ايام من التطوير والتجارب، يدعم ال90 يونيسي واكثر و يعتبر شيء خارق لهاك في اول نسخة له او في نسخته التجريبية.</p>
+        <p>للاستفادة من جميع ميزات AlienX Executor، اتبع الخطوات التالية:</p>
+        <ol>
+            <li><strong>التسجيل في Discord:</strong> قم بالانضمام إلى سيرفر الدعم عبر الرابط الموجود في قسم "سيرفر الدعم". سيكون لديك إمكانية الوصول إلى آخر التحديثات والمساعدة في حال واجهتك أي مشكلة.</li>
+            <li><strong>تحميل الأداة:</strong> بعد الانضمام إلى السيرفر، قم بتحميل الأداة من الرابط المباشر المقدم في قسم "تحميل مباشر". تأكد من أنك قد قمت بتحميل الأداة من مصدر موثوق لتجنب أي مشاكل.</li>
+            <li><strong>تشغيل الأداة:</strong> بعد تحميل الأداة، قم بفك الضغط عن الملفات وتشغيل الملف التنفيذي (Installer). تأكد من أن جميع البرامج الضرورية مثل Microsoft Visual C++ Redistributable مثبتة على جهازك.</li>
+            <li><strong>اختيار السكربت:</strong> داخل الأداة، ستجد قائمة بالسكربتات المتاحة. اختر السكربت الذي ترغب في تنفيذه بناءً على احتياجاتك، مثل زيادة السرعة أو تعديل اللعبة.</li>
+            <li><strong>تشغيل السكربت:</strong> بعد اختيار السكربت، اضغط على زر "تشغيل" لتنفيذه داخل لعبة Roblox. ستتمكن من رؤية التأثيرات بشكل مباشر في اللعبة.</li>
+            <li><strong>الحفاظ على الأمان:</strong> تأكد من عدم استخدام الأداة في بيئات غير آمنة أو مع حسابات قد تواجه مشاكل من استخدام الهاكات. يفضل استخدام AlienX Executor فقط في بيئات آمنة.</li>
+        </ol>
     </div>
 
-    <h2 class="section-title" id="developers">المطورين</h2>
+    <h2 class="section-title" id="info">معلومات إضافية</h2>
     <div class="extra-section">
-        <p> صاحب الفكرة و الصانع : اوفاليان / المستشار : محمد</p>
+        <p>AlienX هو نتاج ايام من التطوير والتجارب، يدعم ال90 يونيسي واكثر و يعتبر شيء خارق لهاك في اول نسخة له او في نسخته التجريبية.</p>
     </div>
+
+   <!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AlienX Executor - واحد من أقوى الهاكات المتطورة لروبلوكس">
+    <title>AlienXExecutor - أقوى أداة في تاريخ الهاكات</title>
+    <link rel="icon" href="./43fca53c-7d51-473d-a080-4730dbb6942b.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --main-color: #00ffcc;
+            --text-color: #ffffff;
+            --bg-color: #000;
+            --hover-color: #ffffff;
+            --accent-color: #1a1a1a;
+            --neon-glow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ccaa;
+            --button-hover-glow: 0 0 15px #00ffcc, 0 0 20px #00ffcc, 0 0 35px #00ccaa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            text-align: center;
+            padding: 5vh 2vw;
+            overflow-x: hidden;
+            animation: gradientBG 20s ease infinite;
+            background: linear-gradient(-45deg, #000000, #FFfFf, #003333, #000000);
+            background-size: 400% 400%;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #000000f0;
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px #00ffcc50;
+            animation: fadeInNav 1s ease-out;
+        }
+
+        @keyframes fadeInNav {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        nav a {
+            color: var(--main-color);
+            text-decoration: none;
+            margin: 0 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--hover-color);
+        }
+
+        header {
+            margin-top: 120px;
+            margin-bottom: 60px;
+            animation: fadeInSlide 1.5s ease-out;
+        }
+
+        @keyframes fadeInSlide {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: var(--main-color);
+            font-size: 4.5rem;
+            margin-bottom: 15px;
+            text-shadow: var(--neon-glow);
+            position: relative;
+            animation: animateRocket 5s infinite;
+        }
+
+        @keyframes animateRocket {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .button {
+            background-color: var(--text-color);
+            color: #000;
+            padding: 20px 45px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            border-radius: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,255,204,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .button:hover::before {
+            left: 100%;
+        }
+
+        .button:hover {
+            background-color: var(--hover-color);
+            transform: scale(1.1);
+            box-shadow: var(--button-hover-glow);
+        }
+
+        .features {
+            margin-top: 80px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            animation: fadeIn 2.8s ease-out;
+        }
+
+        .feature {
+            background-color: var(--accent-color);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 18px #00ffcc35;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px #00ffcc70;
+        }
+
+        .feature h3 {
+            color: var(--main-color);
+            margin-bottom: 14px;
+            font-size: 1.4rem;
+        }
+
+        .feature p {
+            color: #bbb;
+            font-size: 1.05rem;
+        }
+
+        .countdown {
+            margin-top: 60px;
+            font-size: 1.6rem;
+            color: var(--main-color);
+            text-shadow: var(--neon-glow);
+        }
+
+        footer {
+            margin-top: 100px;
+            font-size: 1rem;
+            color: #777;
+            border-top: 1px solid #222;
+            padding-top: 25px;
+        }
+
+        .section-title {
+            margin-top: 100px;
+            font-size: 2.5rem;
+            color: var(--main-color);
+            text-shadow: var(--neon-glow);
+        }
+
+        .extra-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #111;
+            border-radius: 15px;
+            box-shadow: 0 0 20px #00ffcc25;
+        }
+
+        .extra-section p {
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .rocket-animation {
+            animation: rocketFlying 4s ease-in-out infinite;
+        }
+
+        @keyframes rocketFlying {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+        }
+
+        .dev-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .dev-box {
+            background-color: #0a0a0a;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px #00ffcc55;
+            min-width: 220px;
+        }
+
+        .dev-box h3 {
+            color: var(--main-color);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .dev-box p {
+            color: #bbb;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+<!-- ... باقي المحتوى كما هو ... -->
+
+    <h2 class="section-title" id="developers">المطورين</h2>
+    <div class="extra-section dev-list">
+        <div class="dev-box">
+            <h3>أوفاليان/ dis :oovalerian</h3>
+            <p>المطور الرئيسي و صانع الموقع والهاك</p>
+        </div>
+        <div class="dev-box">
+            <h3>محمد / dis :mr7mbozo3</h3>
+            <p>المستشار التقني و المساعد الشخصي</p>
+        </div>
+        <div class="dev-box">
+            <h3>خالد / dis :r_i.</h3>
+            <p>مسير الخادم ورئيس الادارة و مسؤول التحديثات</p>
+        </div>
+    </div>
+
+<!-- ... باقي السكربت كما هو ... -->
+</body>
+</html>
+
 
     <div class="countdown" id="countdown">
         التحديث القادم بعد: <span id="timer">00:00:00</span>
     </div>
 
     <footer>
-        <p>&copy; 2025 AlienX. كل الحقوق محفوظة. </p>
+        <p>&copy; 2025 AlienX. كل الحقوق محفوظة.</p>
     </footer>
 
     <script>
