@@ -4,59 +4,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ياسين ابي 240 روبوكس</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: url('https://i.ibb.co/F0Qb6xZ/background.png') no-repeat center center fixed;
-            background-size: cover;
+            font-family: 'Press Start 2P', cursive;
+            overflow-x: hidden;
+            background: black;
             color: #fff;
-        }
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background-color: rgba(0,0,0,0.6);
-        }
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-        }
-        section {
-            padding: 50px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background-color: rgba(0,0,0,0.5);
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            font-size: 1.5em;
-            transition: transform 0.3s, background-color 0.3s;
-        }
-        .card:hover {
-            transform: scale(1.05);
-            background-color: rgba(0,0,0,0.7);
-        }
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            background-color: rgba(0,0,0,0.6);
-            font-size: 1.2em;
-        }
-    </style>
+        }/* النجوم المتحركة */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://i.ibb.co/4d7Vt1F/stars.png') repeat;
+        z-index: -2;
+        animation: starMove 100s linear infinite;
+    }
+
+    @keyframes starMove {
+        from {background-position:0 0;}
+        to {background-position:-10000px 0;}
+    }
+
+    header {
+        text-align: center;
+        padding: 100px 20px;
+        position: relative;
+    }
+    header h1 {
+        font-size: 3em;
+        color: #0ff;
+        text-shadow: 0 0 20px #0ff, 0 0 40px #0ff, 0 0 60px #0ff, 0 0 80px #0ff;
+        animation: neonGlow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes neonGlow {
+        from {text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;}
+        to {text-shadow: 0 0 20px #0ff, 0 0 40px #0ff, 0 0 80px #0ff;}
+    }
+
+    section {
+        padding: 80px 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+    }
+
+    .card {
+        background: rgba(0,0,0,0.6);
+        border: 2px solid #0ff;
+        border-radius: 25px;
+        text-align: center;
+        font-size: 1.2em;
+        padding: 40px;
+        transition: transform 0.5s, box-shadow 0.5s;
+        box-shadow: 0 0 20px #0ff;
+        perspective: 1000px;
+    }
+
+    .card:hover {
+        transform: rotateY(15deg) rotateX(10deg) scale(1.15);
+        box-shadow: 0 0 60px #0ff, 0 0 100px #0ff;
+    }
+
+    footer {
+        text-align: center;
+        padding: 50px 20px;
+        font-size: 1.2em;
+        color: #0ff;
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    /* تأثير بارالكس عند التمرير */
+    .parallax {
+        transform: translateY(0px);
+        transition: transform 0.2s;
+    }
+</style>
+<script>
+    window.addEventListener('scroll', () => {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            const offset = window.scrollY * 0.1;
+            card.style.transform = `translateY(${offset}px) rotateY(15deg) rotateX(10deg) scale(1.1)`;
+        });
+    });
+</script>
+
 </head>
 <body><header>
-    <h1>ارجوك ياسين ابي 240 روبوكس</h1>
+    <h1 class="parallax">ارجوك ياسين ابي 240 روبوكس</h1>
 </header>
 
 <section>
-    <div class="card">ياسين ابي 240 روبوكس</div>
-    <div class="card">ياسين ابي 240 روبوكس</div>
-    <div class="card">ياسين ابي 240 روبوكس</div>
-    <div class="card">ياسين ابي 240 روبوكس</div>
-    <div class="card">ياسين ابي 240 روبوكس</div>
-    <div class="card">ياسين ابي 240 روبوكس</div>
+    <div class="card parallax">ياسين ابي 240 روبوكس</div>
+    <div class="card parallax">ياسين ابي 240 روبوكس</div>
+    <div class="card parallax">ياسين ابي 240 روبوكس</div>
+    <div class="card parallax">ياسين ابي 240 روبوكس</div>
+    <div class="card parallax">ياسين ابي 240 روبوكس</div>
+    <div class="card parallax">ياسين ابي 240 روبوكس</div>
 </section>
 
 <footer>
